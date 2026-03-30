@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Portafolio Otoño</title>
+<style>
+body {
+    margin: 0;
+    font-family: 'Segoe UI', sans-serif;
+    background: linear-gradient(to bottom, #ffecd2, #fcb69f);
+    color: #5a3e2b;
+}
+header {
+    text-align: center;
+    padding: 50px;
+}
+header h1 {
+    font-size: 3em;
+}
+nav {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+    background: #8b5e3c;
+    padding: 10px;
+}
+nav a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+section {
+    padding: 40px;
+}
+.card {
+    background: rgba(255,255,255,0.8);
+    padding: 20px;
+    margin: 20px;
+    border-radius: 15px;
+    box-shadow: 0 4px 10px rgba(0,0,0,0.2);
+}
+footer {
+    text-align: center;
+    padding: 20px;
+    background: #8b5e3c;
+    color: white;
+}
+.leaf {
+    position: fixed;
+    top: -50px;
+    width: 30px;
+    height: 30px;
+    background: orange;
+    border-radius: 50%;
+    opacity: 0.7;
+    animation: fall linear infinite;
+}
+@keyframes fall {
+    to {
+        transform: translateY(110vh) rotate(360deg);
+    }
+}
+button {
+    background: #d2691e;
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+button:hover {
+    background: #a0522d;
+}
+</style>
+</head>
+<body>
+<header>
+<h1>Mi Portafolio 🍂</h1>
+<p>Estudiante de Ingeniería Estadística e Informática</p>
+</header>
+<nav>
+<a href="#about">Sobre mí</a>
+<a href="#skills">Habilidades</a>
+<a href="#projects">Proyectos</a>
+<a href="#contact">Contacto</a>
+</nav>
+<section id="about">
+<div class="card">
+<h2>Sobre mí</h2>
+<p>Soy estudiante apasionado por los datos, la programación y la inteligencia artificial.</p>
+</div>
+</section>
+<section id="skills">
+<div class="card">
+<h2>Habilidades</h2>
+<ul>
+<li>Python</li>
+<li>R</li>
+<li>Machine Learning</li>
+<li>Desarrollo Web</li>
+</ul>
+</div>
+</section>
+<section id="projects">
+<div class="card">
+<h2>Proyectos</h2>
+<p>Proyecto 1: Análisis de datos climáticos</p>
+<p>Proyecto 2: Predicción con modelos estadísticos</p>
+<p>Proyecto 3: Dashboard interactivo</p>
+</div>
+</section>
+<section id="contact">
+<div class="card">
+<h2>Contacto</h2>
+<p>Email: adauberlindamamaniramos@email.com</p>
+<button onclick="mostrarMensaje()">Enviar mensaje</button>
+</div>
+</section>
+<footer>
+<p>© 2026 Portafolio Otoñal</p>
+</footer>
+<script>
+function crearHoja() {
+    const hoja = document.createElement('div');
+    hoja.classList.add('leaf');
+    hoja.style.left = Math.random() * window.innerWidth + 'px';
+    hoja.style.animationDuration = (Math.random() * 3 + 2) + 's';
+    document.body.appendChild(hoja);
+    setTimeout(() => hoja.remove(), 5000);
+}
+setInterval(crearHoja, 300);
+function mostrarMensaje() {
+    alert('¡Gracias por visitar mi portafolio! 🍁');
+}
+</script>
+</body>
+</html>
